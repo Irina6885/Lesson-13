@@ -1,0 +1,170 @@
+
+.wrapper {
+    position: relative;
+    overflow: hidden;
+    min-height: 100%;
+}
+.body__nature {
+    height: 1150px;
+    max-width: 100%;
+    
+    background-color: rgba(17, 221, 236, 0.281);
+    position: relative;
+    perspective: 300px;
+    transform-style: preserve-3d;
+}
+.house {
+    padding: 50px;
+    
+}
+.house__frame {
+    background-color: rgb(97, 26, 26);
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    bottom: 0;
+}
+.house__roof {
+    background-color: green;
+    width: 500px;
+    height: 600px;
+    clip-path: polygon(50% 00%, 100% 50%, 0% 50%, 0% 50%);
+    position: absolute;
+    bottom: 100px;
+    z-index: 5;
+}
+.house__smoke {
+    width: 50px;
+    height: 150px;
+    background-color: black;
+    position: absolute;
+    bottom: 500px;
+    left: 135px;
+    
+}
+.smoke {
+    background-color: #666;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    position: absolute;
+    animation-name: smoke;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+
+}
+@keyframes smoke {
+    0% {
+        
+        top: 0;
+    }
+    100% {
+        
+        top: -100px;
+        width: 5px;
+        height: 5px;
+        background-color: #66666665;
+    }
+}
+
+
+
+.house__window {
+    background-image: url(../img/window.jpg);
+    width: 200px;
+    height: 200px;
+    background-size: 100%;
+    position: absolute;
+    top: 820px;
+    left: 80px;
+}
+.house__door {
+    width: 150px;
+    height: 350px;
+    background-image: url(../img/door.jpg);
+    background-size: 100%;
+    position: absolute;
+    top: 800px;
+    left: 350px;
+    transform: rotateY(0deg);
+    transition-duration: 1s;
+}
+.house__door:hover{
+    transform-origin: top right;
+    transform: rotateY(45deg);
+    
+}
+.frame__car {
+    
+    width: 600px;
+    height: 600px;
+    background-image: url(../img/car-svgrepo-com.svg);
+    background-size: 100%;
+    position: absolute;
+    z-index: 50;
+    top: 700px;
+    left: 600px;
+    animation-name: car;
+    animation-duration: 10s;
+
+}
+
+@keyframes car {
+    0% {
+        
+        left: -600px;
+    }
+
+    100% {
+    
+    }
+}
+
+.car__passenger {
+    width: 300px;
+    height: 300px;
+    background-image: url(../img/people1.svg);
+    opacity: 0;
+    background-size: 300px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 60;
+    left: 600px;
+    animation-name: girl;
+    animation-duration: 5s;
+    animation-delay: 10s;
+    
+}
+@keyframes girl {
+    0% {
+        
+    }
+    90% {
+        left: 250px;
+    }
+    100% {
+        opacity: 1;
+        left: 250px;
+    }
+}
+
+
+.nature__sun {
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+    border-radius: 50%;
+    outline: 15px dashed rgb(233, 233, 29) ;
+    position: fixed;
+    left: 300px;
+    animation: sun 15s linear infinite;
+}
+@keyframes sun {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
